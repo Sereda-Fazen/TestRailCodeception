@@ -1,0 +1,139 @@
+class_name: AcceptanceTester
+modules:
+    enabled:
+        - WebDriver
+        - Helper\Acceptance
+        - Asserts
+
+
+    config:
+            WebDriver:
+                url: 'http://www.mowdirect.co.uk/'
+                restart: false
+                browser: chrome
+                window_size: 360x640
+                #window_size: 768x1024
+                #window_size: 800x1200
+                #clear_cookies: false
+
+
+
+
+env:
+
+  test:
+    modules:
+      config:
+         WebDriver:
+            url: 'http://www.mowdirect.co.uk/'
+            browser: chrome
+            capabilities:
+              chromeOptions:
+                mobileEmulation:
+                 deviceName: 'Google Nexus 5'
+
+  test2:
+    modules:
+      config:
+         WebDriver:
+            url: 'http://www.mowdirect.co.uk/'
+            browser: chrome
+            capabilities:
+              chromeOptions:
+                mobileEmulation:
+                 deviceName: 'Apple iPhone 6 Plus'
+
+
+
+
+
+  # for android mobile testing
+
+  galaxy_S4:
+      modules:
+        config:
+           WebDriver:
+               url: 'http://www.mowdirect.co.uk/'
+               host: 'hub.browserstack.com'
+               port: 80
+               browser: android
+               capabilities:
+                 browserstack.user: 'alex4556'
+                 browserstack.key: 'w1447cpT1SQuyFthNZr3'
+                 platform: 'ANDROID'
+                 device: 'Samsung Galaxy S4'
+                 browserstack.debug: 'true'
+                 unexpectedAlertBehaviour: 'accept'
+                 pageLoadStrategy: 'eager'
+
+
+  google_nexus_5:
+      modules:
+        config:
+           WebDriver:
+              url: 'http://www.mowdirect.co.uk/'
+              host: 'hub.browserstack.com'
+              port: 80
+              browser: android
+              capabilities:
+                browserstack.user: 'alex4556'
+                browserstack.key: 'w1447cpT1SQuyFthNZr3'
+                platform: 'ANDROID'
+                device: 'Google Nexus 5'
+                browserstack.debug: 'true'
+                unexpectedAlertBehaviour: 'accept'
+                pageLoadStrategy: 'eager'
+
+
+  # for ios mobile testing
+
+  iPhone_6S:
+      modules:
+        config:
+           WebDriver:
+              url: 'http://www.mowdirect.co.uk/'
+              host: 'hub.browserstack.com'
+              port: 80
+              browser: iPhone
+              capabilities:
+                browserstack.user: 'alex4556'
+                browserstack.key: 'w1447cpT1SQuyFthNZr3'
+                platform: 'MAC'
+                device: 'iPhone 6S Plus'
+                browserstack.debug: 'true'
+                unexpectedAlertBehaviour: 'accept'
+                pageLoadStrategy: 'eager'
+
+
+  # for iPad tablet
+
+  iPad_Air_2:
+      modules:
+        config:
+           WebDriver:
+              url: 'http://www.mowdirect.co.uk/'
+              host: 'hub.browserstack.com'
+              port: 80
+              browser: iPhone
+              host: 'hub.browserstack.com'
+              port: 80
+              capabilities:
+                browserstack.user: 'alex4556'
+                browserstack.key: 'w1447cpT1SQuyFthNZr3'
+                browserstack.debug: 'true'
+                unexpectedAlertBehaviour: 'accept'
+                platform: MAC
+                device: iPad 2 (5.0)
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+actor: Tester
+paths:
+    tests: tests
+    log: tests/_output
+    data: tests/_data
+    support: tests/_support
+    envs: tests/_envs
+settings:
+    bootstrap: _bootstrap.php
+    colors: true
+    memory_limit: 1024M
+extensions:
+    enabled:
+        - Codeception\Extension\RunFailed
+
+extensions:
+    enabled:
+        - Codeception\TestRail\Extension
+
+extensions:
+    config:
+        \Codeception\TestRail\Extension:
+            enabled: true                 # When false, don't communicate with TestRail (optional; default: true)
+            user: 'yf@itsvit.org'       # A TestRail user (required)
+            apikey: '3N0NhyIsdV1sLOamkBQc-yqm3mlvC/pR4dgsebtYd'              # A TestRail API Key (required)
+            project: P1                   # TestRail Project ID (required)
+            status:
+                success: 1                  # Override the default success status (optional)
+
+coverage:
+    enabled: true
+    include:
+      - src/*
+    exclude:
+      - vendor/*
